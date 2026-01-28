@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const speedKmH = 35; // city traffic
     const minutes = Math.round((ambulance.distanceKm / speedKmH) * 60);
-    const clampedMinutes = Math.min(Math.max(minutes, 5), 10);
+    const clampedMinutes = Math.min(Math.max(minutes, 3), 7); // clamp to 3–7 min
     ambulanceEtaEl.textContent = `${clampedMinutes} minutes (estimated)`;
 
     driverNumberText.textContent = `Driver phone: ${ambulance.phone}`;
@@ -502,7 +502,7 @@ document.addEventListener("DOMContentLoaded", () => {
       steps.push("Do not move the neck or spine if you suspect head or back injury.");
     } else if (emergencyType === "heart") {
       steps.push("Make the patient sit in a semi-upright position, back supported.");
-      steps.push("Ask if they have any heart medicines prescribed and help them take it if they confirm.");
+      steps.push("Ask if they have heart medicines prescribed and help them take it only if they confirm.");
     } else if (emergencyType === "breathing") {
       steps.push("Help the patient sit slightly forward, with support for arms and back.");
       steps.push("Loosen tight clothing around the neck and chest.");
@@ -537,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
       steps.push("If not trained, give hands-only CPR: push hard and fast in the center of the chest.");
     } else if (breathing === "difficult") {
       steps.push("Encourage slow, deep breaths. Keep them sitting slightly forward.");
-      steps.push("Remove any tight scarf, tie, or dupatta from the neck area.");
+      steps.push("Remove any tight clothing, scarf, or tie from the neck area.");
     } else if (breathing === "normal") {
       steps.push("Keep checking breathing every 1–2 minutes.");
     }
